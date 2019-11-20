@@ -1,7 +1,21 @@
+
 try {
+  var noq = localStorage.getItem("noq") === null ? null : JSON.parse(localStorage.getItem('noq'));
+  var per = localStorage.getItem("per") === null ? null : JSON.parse(localStorage.getItem('per'));
+
+  if (
+    document.location.href.includes("noq=") &&
+    document.location.href.includes("p=")
+  ) {
+    noq = getUrlVars(location).noq;
+    per = getUrlVars(location).p;
+
+    localStorage.setItem("noq", JSON.stringify(noq));
+    localStorage.setItem("per", JSON.stringify(per));
+  }
+
   var currentCounter = JSON.parse(localStorage.getItem("counter"));
-  var total = 100;
-  var randomTotal = Math.floor(Math.random() * 5) + 30;
+  var randomTotal = noq === null ? Math.floor(Math.random() * 5) + 30 : noq;
   var submit = document.querySelector(".submit");
   var random = Math.floor(Math.random() * 4);
 
@@ -14,18 +28,21 @@ try {
   }
 
   if (currentCounter < randomTotal) {
-    if (random % 2 == 0) {
+    if (per === "100") {
       document.getElementById("t").click();
     } else {
-      var text = document.querySelector(".selectBtn").textContent;
-      if (text == "ア") {
-        document.querySelector(".selectBtn").click();
+      if (random % 2 == 0) {
+        document.getElementById("t").click();
+      } else {
+        var text = document.querySelector(".selectBtn").textContent;
+        if (text == "ア") {
+          document.querySelector(".selectBtn").click();
+        }
       }
     }
-    setTimeout(200);
 
     submit.click();
-    setTimeout(200);
+    setTimeout(300);
   } else {
     localStorage.clear();
     var showReport = document.querySelector("#showReport");
