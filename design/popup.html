@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h2>Shiken Hacker</h2>
+        <p class="card-title">fe-shiken website - Hacker</p>
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">No of Questions</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="e.g. 60"
+              id="noOfQuestions"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Percentage</label>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="percentage"
+                id="percentageRadio70"
+                value="70"
+              />
+              <label class="form-check-label" for="percentageRadio70">
+                below 70%
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="percentage"
+                id="percentageRadio100"
+                value="100"
+              />
+              <label class="form-check-label" for="percentageRadio100">
+                below 100%
+              </label>
+            </div>
+          </div>
+
+          <h4>Email</h4>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email (To)</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailFrom"
+              placeholder="e.g. example@mail.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email (From)</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailTo"
+              placeholder="e.g. example@mail.com"
+            />
+          </div>
+          <button type="submit" class="btn btn-danger btn-block" id="hack">
+            Hack
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "fe-shiken-website - automated exam",
+  "version": "0.9",
+  "browser_action": {
+    "default_icon": "images/icon.png"
+  },
+  "background": {
+    "scripts": ["background/background.js"]
+  },
+  "permissions": [
+    "tabs", "https://www.fe-siken.com/fekakomon.php"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.fe-siken.com/fekakomon.php"],
+      "js": [
+        "lib/jquery.min.js",
+        "lib/jquery-ui.js",
+        "lib/html2canvas.min.js",
+        "lib/screen-capture.js",
+        "lib/smtp.js",
+        "content.js"
+      ]
+    }
+  ]
+}
