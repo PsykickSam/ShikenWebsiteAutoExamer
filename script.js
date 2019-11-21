@@ -15,33 +15,33 @@ if (noOfQuestions !== null) {
 }
 
 if (percentageRadioAny !== null) {
-  if (localStorage.getItem("percentageRadioAny") == null) {
-    if (JSON.parse(localStorage.getItem(percentageRadioAny)) === true) {
+  if (localStorage.getItem("percentageRadioAny") !== null) {
+    if (JSON.parse(localStorage.getItem("percentageRadioAny")) === true) {
       percentageRadioAny.checked = true;
     }
   }
 }
 
 if (percentageRadio40 !== null) {
-  if (localStorage.getItem("percentageRadio40") == null) {
-    if (JSON.parse(localStorage.getItem(percentageRadio40)) === true) {
-      percentageRadioAny.checked = true;
+  if (localStorage.getItem("percentageRadio40") !== null) {
+    if (JSON.parse(localStorage.getItem("percentageRadio40")) === true) {
+      percentageRadio40.checked = true;
     }
   }
 }
 
 if (percentageRadio70 !== null) {
-  if (localStorage.getItem("percentageRadio70") == null) {
-    if (JSON.parse(localStorage.getItem(percentageRadio70)) === true) {
-      percentageRadioAny.checked = true;
+  if (localStorage.getItem("percentageRadio70") !== null) {
+    if (JSON.parse(localStorage.getItem("percentageRadio70")) === true) {
+      percentageRadio70.checked = true;
     }
   }
 }
 
 if (percentageRadio100 !== null) {
-  if (localStorage.getItem("percentageRadio100") == null) {
-    if (JSON.parse(localStorage.getItem(percentageRadio100)) === true) {
-      percentageRadioAny.checked = true;
+  if (localStorage.getItem("percentageRadio100") !== null) {
+    if (JSON.parse(localStorage.getItem("percentageRadio100")) === true) {
+      percentageRadio100.checked = true;
     }
   }
 }
