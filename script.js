@@ -14,9 +14,45 @@ if (noOfQuestions !== null) {
       : JSON.parse(localStorage.getItem("noOfQuestions"));
 }
 
+if (percentageRadioAny !== null) {
+  if (localStorage.getItem("percentageRadioAny") == null) {
+    if (JSON.parse(localStorage.getItem(percentageRadioAny)) === true) {
+      percentageRadioAny.checked = true;
+    }
+  }
+}
+
+if (percentageRadio40 !== null) {
+  if (localStorage.getItem("percentageRadio40") == null) {
+    if (JSON.parse(localStorage.getItem(percentageRadio40)) === true) {
+      percentageRadioAny.checked = true;
+    }
+  }
+}
+
+if (percentageRadio70 !== null) {
+  if (localStorage.getItem("percentageRadio70") == null) {
+    if (JSON.parse(localStorage.getItem(percentageRadio70)) === true) {
+      percentageRadioAny.checked = true;
+    }
+  }
+}
+
+if (percentageRadio100 !== null) {
+  if (localStorage.getItem("percentageRadio100") == null) {
+    if (JSON.parse(localStorage.getItem(percentageRadio100)) === true) {
+      percentageRadioAny.checked = true;
+    }
+  }
+}
+
 if (hack !== null) {
   hack.addEventListener("click", () => {
     localStorage.setItem("noOfQuestions", JSON.stringify(noOfQuestions.value));
+    localStorage.setItem("percentageRadioAny", JSON.stringify(percentageRadioAny.checked));
+    localStorage.setItem("percentageRadio40", JSON.stringify(percentageRadio40.checked));
+    localStorage.setItem("percentageRadio70", JSON.stringify(percentageRadio70.checked));
+    localStorage.setItem("percentageRadio100", JSON.stringify(percentageRadio100.checked));
     window.close();
 
     if (percentageRadio100.checked === true) {
