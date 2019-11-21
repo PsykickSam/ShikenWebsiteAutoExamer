@@ -1,7 +1,12 @@
-
 try {
-  var noq = localStorage.getItem("noq") === null ? null : JSON.parse(localStorage.getItem('noq'));
-  var per = localStorage.getItem("per") === null ? null : JSON.parse(localStorage.getItem('per'));
+  var noq =
+    localStorage.getItem("noq") === null
+      ? null
+      : JSON.parse(localStorage.getItem("noq"));
+  var per =
+    localStorage.getItem("per") === null
+      ? null
+      : JSON.parse(localStorage.getItem("per"));
 
   if (
     document.location.href.includes("noq=") &&
@@ -15,9 +20,17 @@ try {
   }
 
   var currentCounter = JSON.parse(localStorage.getItem("counter"));
-  var randomTotal = noq === null ? Math.floor(Math.random() * 5) + 30 : noq;
-  var submit = document.querySelector(".submit");
+  var randomTotal = Math.floor(Math.random() * 5) + noq === null ? 30 : noq;
   var random = Math.floor(Math.random() * 4);
+  var submit = document.querySelector(".submit");
+  var resultmes = document.querySelector("#resultmes");
+  var currentPercentage = 0;
+
+  if (resultmes != null) {
+    resultmes = resultmes.innerText;
+    currentPercentage = parseFloat(resultmes.substring(resultmes.lastIndexOf(":") + 1, resultmes.lastIndexOf("%")))
+  }
+
 
   if (currentCounter == null) {
     currentCounter = 0;
@@ -31,7 +44,12 @@ try {
     if (per === "100") {
       document.getElementById("t").click();
     } else {
-      if (random % 2 == 0) {
+      var isPercentageMatter = true;
+      if (per !== "any") {
+        isPercentageMatter = currentPercentage <= parseInt(per);
+      }
+
+      if (random % 2 == 0 && isPercentageMatter) {
         document.getElementById("t").click();
       } else {
         var text = document.querySelector(".selectBtn").textContent;
@@ -41,8 +59,9 @@ try {
       }
     }
 
-    submit.click();
-    setTimeout(300);
+    setTimeout(function() {
+      submit.click();
+    }, 300);
   } else {
     localStorage.clear();
     var showReport = document.querySelector("#showReport");
