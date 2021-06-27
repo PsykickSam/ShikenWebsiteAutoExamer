@@ -6,8 +6,8 @@ Build with HTML, CSS, JS. Only accessed from chrome extension's Developer Mode e
 
 ## Installation Guide
 
-Open Chrome Extension
-Turn on Developer Mode
+Open Chrome Extension <br>  
+Turn on Developer Mode <br>  
 Click Load Unpacked and choose the project folder
 
 ## License
