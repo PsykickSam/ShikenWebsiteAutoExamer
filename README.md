@@ -1,6 +1,6 @@
 # Shiken Website Auto Examer
 
-### A chrome extension that automatically give exam of a (particular website) website and takes a screenshot and downloads it
+### A chrome extension that can automatically give exam of a (particular website) website and takes a screenshot and downloads it
 
 Build with HTML, CSS, JS. Only accessed from chrome extension's Developer Mode enabled
 
